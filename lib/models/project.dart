@@ -41,4 +41,34 @@ wsprompt는 프로젝트 디렉토리를 스캔하여 파일 내용을 자동으
         url: "https://github.com/hi-jin/wsprompt",
         progress: 1.0,
       ),
+      Project(
+        title: "Upciety",
+        description: """프리랜서 앱 개발자로 활동하며 개발에 참여한 Flutter 앱입니다.\
+플라스틱을 제출하면 현금과 비슷하게 사용할 수 있는 포인트를 적립받을 수 있습니다.\
+수거된 플라스틱은 새로운 제품으로 재탄생합니다.""",
+        detailedDescription:
+            """(주)제4의공간에서 개발한 앱으로, 저는 Flutter를 이용한 앱 전반 및 Firebase Functions를 활용한 백엔드 로직 개발을 진행했습니다.""",
+        imageUrl: "assets/images/projects/upciety.png",
+        url: "https://www.4thplace.io/",
+        progress: 0.5,
+      ),
+      Project(
+        title: "Omok-RL",
+        description: """강화학습을 이용한 오목 AI입니다.\
+파이썬으로 구현한 오목 게임을 스스로 플레이하며 학습합니다.""",
+        detailedDescription: null,
+        imageUrl: "assets/images/projects/omok.png",
+        url: "https://github.com/hi-jin/Omok-RL",
+        progress: 0.2,
+      ),
+      Project(
+        title: "jeju-translator",
+        description: """LLM을 파인튜닝하여 만든 제주방언 번역기입니다.\
+표준어를 제주방언으로 번역해주는 서비스입니다.\
+pko-t5모델을 사용하여 제주방언 데이터셋을 학습시켰습니다.""",
+        detailedDescription: "AI Hub에서 제공한 AI데이터를 이용한 한국지능정보사회진흥원의 사업결과입니다.",
+        imageUrl: "assets/images/projects/jeju_translator.png",
+        url: "https://github.com/hi-jin/jeju-translator",
+        progress: 0.8,
+      ),
     ]);
