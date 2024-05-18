@@ -16,19 +16,20 @@ class MyInfo extends StatelessWidget {
             Spacer(flex: 2),
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage("assets/images/IMG_7344.jpg"),
+              backgroundImage: AssetImage("assets/images/logan.jpeg"),
             ),
             Spacer(),
             Text(
-              "Abu Anwar",
+              "Hyungjin Ahn (Logan)",
               style: Theme.of(context).textTheme.subtitle2,
             ),
+            const SizedBox(height: 5),
             Text(
-              "Flutter Developer & Founder of \n The Flutter Way",
+              "NLP/RL Researcher\n& Flutter Developer",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w200,
-                height: 1.5,
+                height: 1.2,
               ),
             ),
             Spacer(flex: 2),
