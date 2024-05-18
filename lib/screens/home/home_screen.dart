@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             // HighLightsInfo(),
             MyPublications(),
             MyProjects(),
-            Recommendations(),
+            // Recommendations(),
           ],
         ),
       ),

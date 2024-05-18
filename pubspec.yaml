@@ -55,6 +55,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/images/publications/
+    - assets/images/projects/
     - assets/pdfs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
