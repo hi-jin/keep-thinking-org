@@ -27,8 +27,21 @@ class HomeBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Discover my Amazing \nArt Space!",
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(text: "Hello! I'm Hyungjin Ahn,\na "),
+                      TextSpan(
+                        text: "Developer",
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      TextSpan(text: " & "),
+                      TextSpan(
+                        text: "NLP/RL Researcher",
+                        style: TextStyle(color: primaryColor),
+                      ),
+                    ],
+                  ),
                   style: Responsive.isDesktop(context)
                       ? Theme.of(context).textTheme.headline3!.copyWith(
                             fontWeight: FontWeight.bold,
@@ -39,17 +52,14 @@ class HomeBanner extends StatelessWidget {
                             color: Colors.white,
                           ),
                 ),
-                if (Responsive.isMobileLarge(context))
-                  const SizedBox(height: defaultPadding / 2),
+                if (Responsive.isMobileLarge(context)) const SizedBox(height: defaultPadding / 2),
                 MyBuildAnimatedText(),
                 SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: defaultPadding * 2,
-                          vertical: defaultPadding),
+                      padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2, vertical: defaultPadding),
                       backgroundColor: primaryColor,
                     ),
                     child: Text(
@@ -79,16 +89,12 @@ class MyBuildAnimatedText extends StatelessWidget {
       maxLines: 1,
       child: Row(
         children: [
-          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
-          if (!Responsive.isMobileLarge(context))
-            SizedBox(width: defaultPadding / 2),
-          Text("I build "),
-          Responsive.isMobile(context)
-              ? Expanded(child: AnimatedText())
-              : AnimatedText(),
-          if (!Responsive.isMobileLarge(context))
-            SizedBox(width: defaultPadding / 2),
-          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
+          if (!Responsive.isMobileLarge(context)) ThinkingCodedText(),
+          if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
+          Text("I love "),
+          Responsive.isMobile(context) ? Expanded(child: AnimatedText()) : AnimatedText(),
+          if (!Responsive.isMobileLarge(context)) SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context)) ThinkingCodedText(closed: true),
         ],
       ),
     );
@@ -105,15 +111,11 @@ class AnimatedText extends StatelessWidget {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
-          "responsive web and mobile app.",
+          "building something cool & funny.",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "complete e-Commerce app UI.",
-          speed: Duration(milliseconds: 60),
-        ),
-        TyperAnimatedText(
-          "Chat app with dark and light theme.",
+          "learning & thinking about anything.",
           speed: Duration(milliseconds: 60),
         ),
       ],
@@ -121,9 +123,12 @@ class AnimatedText extends StatelessWidget {
   }
 }
 
-class FlutterCodedText extends StatelessWidget {
-  const FlutterCodedText({
+class ThinkingCodedText extends StatelessWidget {
+  final bool closed;
+
+  const ThinkingCodedText({
     Key? key,
+    this.closed = false,
   }) : super(key: key);
 
   @override
@@ -133,10 +138,10 @@ class FlutterCodedText extends StatelessWidget {
         text: "<",
         children: [
           TextSpan(
-            text: "flutter",
+            text: "thinking",
             style: TextStyle(color: primaryColor),
           ),
-          TextSpan(text: ">"),
+          TextSpan(text: closed ? "/>" : ">"),
         ],
       ),
     );

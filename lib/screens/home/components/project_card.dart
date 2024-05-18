@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile/models/Project.dart';
+import 'package:flutter_profile/models/project.dart';
 import 'package:flutter_profile/responsive.dart';
 
 import '../../../constants.dart';
 
-class ProjectCard extends StatelessWidget {
-  const ProjectCard({
+class InfoCard extends StatelessWidget {
+  const InfoCard({
     Key? key,
-    required this.project,
+    required this.info,
   }) : super(key: key);
 
-  final Project project;
+  final Project info;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,14 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            project.title!,
+            info.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.subtitle2,
           ),
           Spacer(),
           Text(
-            project.description!,
+            info.description!,
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(height: 1.5),
